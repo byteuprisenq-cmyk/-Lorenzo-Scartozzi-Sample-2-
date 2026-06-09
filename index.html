@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorenzo Scartozzi — Real Estate Professional | NZ Sotheby's International Realty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --stone:       #F9F6F1;
+  --parchment:   #EDE8DF;
+  --espresso:    #2C1F14;
+  --terracotta:  #C4623A;
+  --terra-light: #D9825F;
+  --sage:        #7A8C6E;
+  --warm-grey:   #9A9088;
+  --warm-mid:    #6B5E55;
+  --ink:         #1A1410;
+  --border:      #DDD5C8;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--stone);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ─── SITE SHELL ─── */
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ─── LEFT SIDEBAR ─── */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--espresso);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0;
+}
+
+.sidebar-logo {
+  padding: 0 32px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.sidebar-logo-sub {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 400;
+}
+.sidebar-logo-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 32px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+.sidebar-nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 2px;
+  height: 20px;
+  background: var(--terracotta);
+  transition: transform 0.2s;
+}
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.04);
+}
+.sidebar-nav a:hover::before,
+.sidebar-nav a.active::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+.sidebar-contact {
+  padding: 28px 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-contact-label {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 14px;
+}
+.sidebar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.sidebar-contact-item a {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.3;
+}
+.sidebar-contact-item a:hover { color: var(--terracotta); }
+.sc-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sidebar-cta {
+  display: block;
+  margin: 20px 32px 0;
+  background: var(--terracotta);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.sidebar-cta:hover { background: var(--terra-light); }
+
+/* ─── MAIN CONTENT ─── */
+.main-content {
+  margin-left: 240px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  position: relative;
+}
+
+.hero-text-panel {
+  background: var(--parchment);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text-panel::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 1px;
+  background: var(--border);
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.hero-eyebrow-line {
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: var(--terracotta);
+}
+.hero-eyebrow-text {
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+.hero-name-stack {
+  margin-bottom: 40px;
+}
+.hero-first {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(72px, 8vw, 110px);
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  display: block;
+}
+.hero-last {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(72px, 8vw, 110px);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--terracotta);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-left: 4px;
+}
+
+.hero-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.hero-title-text {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--warm-mid);
+  font-weight: 500;
+}
+.hero-title-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 60px;
+}
+
+.hero-bio {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--warm-mid);
+  font-weight: 300;
+  max-width: 380px;
+  margin-bottom: 52px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-terra {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--terracotta);
+  color: #fff;
+  padding: 14px 30px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+.btn-terra:hover { background: var(--terra-light); }
+.btn-terra svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.btn-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--espresso);
+  color: var(--espresso);
+  padding: 13px 28px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-ghost-dark:hover { background: var(--espresso); color: #fff; }
+
+.hero-photo-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--espresso);
+}
+
+.hero-photo-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.hero-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(44,31,20,0.85) 0%, transparent 100%);
+  padding: 48px 40px 32px;
+}
+.hero-photo-caption-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+.hero-caption-tag {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+.hero-caption-location {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ─── STAT BAR ─── */
+.stat-bar {
+  background: var(--espresso);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 32px 36px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ─── SECTION CHROME ─── */
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.section-eyebrow-mark {
+  width: 20px;
+  height: 1px;
+  background: var(--terracotta);
+  flex-shrink: 0;
+}
+.section-eyebrow-text {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+/* ─── ABOUT ─── */
+.about-section {
+  padding: 100px 64px;
+  background: var(--stone);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1100px;
+}
+
+.about-left { }
+
+.about-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--espresso);
+  margin-bottom: 36px;
+}
+.about-heading em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.about-body {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--warm-mid);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.about-body strong {
+  font-weight: 500;
+  color: var(--espresso);
+}
+
+.about-sep {
+  width: 40px;
+  height: 2px;
+  background: var(--terracotta);
+  margin: 32px 0;
+}
+
+.passion-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  margin-bottom: 16px;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.passion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.passion-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--warm-mid);
+  font-weight: 400;
+  background: var(--parchment);
+}
+.passion-tag-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--terracotta);
+  border-radius: 50%;
+}
+
+/* About right: photo + credentials */
+.about-right { }
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: relative;
+  background: var(--parchment);
+  margin-bottom: 0;
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.about-photo-bar {
+  height: 4px;
+  background: var(--terracotta);
+  width: 100%;
+}
+.about-creds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  border-top: none;
+}
+.about-cred {
+  padding: 18px 20px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.about-cred:nth-child(even) { border-right: none; }
+.about-cred:nth-last-child(-n+2) { border-bottom: none; }
+.about-cred-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.about-cred-lbl {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+}
+
+/* ─── APPROACH ─── */
+.approach-section {
+  background: var(--parchment);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 64px;
+}
+.approach-inner {
+  max-width: 1100px;
+}
+.approach-header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+.approach-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.1;
+}
+.approach-heading em { font-style: italic; color: var(--terracotta); }
+.approach-sub {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--warm-mid);
+  font-weight: 300;
+  align-self: end;
+  padding-bottom: 4px;
+}
+
+.approach-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.approach-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 2fr;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.approach-row:last-child { border-bottom: none; }
+.approach-row:hover { background: rgba(196,98,58,0.03); }
+
+.approach-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--terracotta);
+  opacity: 0.6;
+  padding: 28px 24px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border);
+}
+.approach-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--espresso);
+  padding: 28px 32px;
+  border-right: 1px solid var(--border);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.approach-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--warm-mid);
+  font-weight: 300;
+  padding: 28px 32px;
+}
+
+/* ─── PROPERTIES ─── */
+.properties-section {
+  padding: 100px 64px;
+  background: var(--stone);
+  overflow: hidden;
+}
+.properties-inner {
+  max-width: 1100px;
+}
+.prop-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  gap: 24px;
+}
+.prop-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.5vw, 48px);
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.1;
+}
+.prop-heading em { font-style: italic; color: var(--terracotta); }
+.enquire-link {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--terracotta);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.enquire-link:hover { color: var(--espresso); border-color: var(--espresso); }
+
+.prop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.prop-card {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  background: var(--stone);
+  transition: background 0.2s;
+}
+.prop-card:last-child { border-right: none; }
+.prop-card:hover { background: var(--parchment); }
+
+.prop-img {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+  background: var(--parchment);
+}
+.prop-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.prop-card:hover .prop-img img { transform: scale(1.03); }
+
+.prop-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--espresso);
+  color: #fff;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 14px;
+}
+.prop-status.coming { background: var(--sage); }
+
+.prop-body {
+  padding: 28px 32px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.prop-price-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 8px;
+}
+.prop-address-line {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--espresso);
+  margin-bottom: 3px;
+}
+.prop-location-line {
+  font-size: 12px;
+  color: var(--warm-grey);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.prop-feats {
+  display: flex;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.prop-feat-item {
+  font-size: 12px;
+  color: var(--warm-mid);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.prop-feat-item::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: var(--terracotta);
+  border-radius: 50%;
+}
+
+/* ─── EDITORIAL QUOTE ─── */
+.quote-section {
+  background: var(--espresso);
+  padding: 100px 64px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: center;
+}
+.quote-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.quote-decoration {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 120px;
+  line-height: 0.8;
+  color: var(--terracotta);
+  opacity: 0.25;
+  font-weight: 300;
+  user-select: none;
+}
+.quote-sig-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.3;
+}
+.quote-sig-role {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  margin-top: 4px;
+}
+.quote-right { }
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
+}
+
+/* ─── NETWORK STRIP ─── */
+.network-section {
+  background: var(--parchment);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 64px;
+}
+.network-inner {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.network-left-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.network-left-heading em { font-style: italic; color: var(--terracotta); }
+.network-body {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--warm-mid);
+  font-weight: 300;
+  max-width: 360px;
+}
+.network-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.net-st {
+  padding: 32px 28px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.net-st:last-child { border-right: none; }
+.net-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1;
+  margin-bottom: 7px;
+}
+.net-lbl {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+}
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: var(--stone);
+  padding: 100px 64px;
+}
+.contact-inner {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-left { }
+.contact-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.5vw, 50px);
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.contact-heading em { font-style: italic; color: var(--terracotta); }
+.contact-subtext {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--warm-mid);
+  font-weight: 300;
+  margin-bottom: 44px;
+  max-width: 360px;
+}
+
+.contact-detail-block {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 44px;
+}
+.c-det-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.c-det-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.c-det-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--terracotta);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.c-det-lbl {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  margin-bottom: 3px;
+}
+.c-det-val {
+  font-size: 14px;
+  color: var(--espresso);
+  font-weight: 300;
+}
+.c-det-val a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.c-det-val a:hover { color: var(--terracotta); }
+
+.office-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.office-block {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  align-items: flex-start;
+}
+.office-terra-bar {
+  width: 2px;
+  height: 36px;
+  background: var(--terracotta);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.office-block-name {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 5px;
+}
+.office-block-addr {
+  font-size: 12px;
+  color: var(--warm-grey);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ─── FORM ─── */
+.contact-form-wrap { }
+.form-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 28px;
+}
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.fld {
+  margin-bottom: 14px;
+}
+.fld-lbl {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  margin-bottom: 7px;
+}
+.fld-inp, .fld-ta {
+  width: 100%;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  color: var(--espresso);
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  resize: none;
+}
+.fld-inp:focus, .fld-ta:focus {
+  border-color: var(--terracotta);
+  background: #fff;
+}
+.fld-inp::placeholder, .fld-ta::placeholder {
+  color: var(--warm-grey);
+  opacity: 0.6;
+}
+.form-btn {
+  width: 100%;
+  background: var(--espresso);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-btn:hover { background: var(--terracotta); }
+.form-note {
+  font-size: 10px;
+  color: var(--warm-grey);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  background: var(--espresso);
+  padding: 28px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
+}
+.footer-center {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+.footer-right {
+  font-size: 9px;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ─── WHATSAPP ─── */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+.wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
+.wa-float svg { width: 28px; height: 28px; fill: white; }
+
+/* ─── MOBILE TOP BAR ─── */
+.mobile-topbar {
+  display: none;
+  background: var(--espresso);
+  padding: 0 20px;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.mobile-topbar-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+}
+.mobile-hamburger {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.mobile-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: rgba(255,255,255,0.7);
+}
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--espresso);
+  z-index: 300;
+  flex-direction: column;
+  padding: 48px 32px;
+  gap: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mobile-drawer.open { opacity: 1; pointer-events: all; }
+.mobile-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 22px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+.mobile-drawer a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 18px;
+  transition: color 0.2s;
+}
+.mobile-drawer a:hover { color: var(--terracotta); }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.shown { opacity: 1; transform: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) {
+  .sidebar { display: none; }
+  .main-content { margin-left: 0; }
+  .mobile-topbar { display: flex; }
+  .mobile-drawer { display: flex; }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-text-panel { padding: 60px 32px; }
+  .hero-text-panel::after { display: none; }
+  .hero-photo-panel { min-height: 50vw; max-height: 480px; }
+
+  .stat-bar { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .about-section { padding: 72px 32px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+
+  .approach-section { padding: 72px 32px; }
+  .approach-header { grid-template-columns: 1fr; gap: 16px; }
+  .approach-row { grid-template-columns: 48px 1fr; }
+  .approach-title { border-right: none; }
+  .approach-desc { display: none; }
+
+  .properties-section { padding: 72px 32px; }
+  .prop-grid { grid-template-columns: 1fr; }
+  .prop-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .prop-card:last-child { border-bottom: none; }
+
+  .quote-section { grid-template-columns: 1fr; padding: 72px 32px; gap: 40px; }
+  .quote-decoration { font-size: 72px; }
+
+  .network-section { padding: 72px 32px; }
+  .network-inner { grid-template-columns: 1fr; gap: 40px; }
+  .network-stats { grid-template-columns: 1fr; }
+  .net-st { border-right: none; border-bottom: 1px solid var(--border); }
+  .net-st:last-child { border-bottom: none; }
+
+  .contact-section { padding: 72px 32px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 56px; }
+
+  .site-footer { padding: 24px 32px; }
+}
+
+@media (max-width: 640px) {
+  .hero-text-panel { padding: 48px 20px; }
+  .hero-first, .hero-last { font-size: 64px; }
+  .about-section, .approach-section, .properties-section,
+  .network-section, .contact-section { padding: 64px 20px; }
+  .quote-section { padding: 64px 20px; }
+  .site-footer { padding: 20px; flex-direction: column; text-align: center; }
+  .footer-center { order: -1; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .wa-float { width: 52px; height: 52px; bottom: 18px; right: 18px; }
+  .wa-float svg { width: 24px; height: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#top" onclick="closeMobileDrawer()">Home</a>
+  <a href="#story" onclick="closeMobileDrawer()">My Story</a>
+  <a href="#properties" onclick="closeMobileDrawer()">Properties</a>
+  <a href="#contact" onclick="closeMobileDrawer()">Connect</a>
+</div>
+
+<!-- MOBILE TOP BAR -->
+<div class="mobile-topbar">
+  <span class="mobile-topbar-name">Lorenzo Scartozzi</span>
+  <button class="mobile-hamburger" id="mobileHamburger">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<div class="site-wrapper">
+
+  <!-- ─── SIDEBAR ─── -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-name">Lorenzo<br>Scartozzi</div>
+      <div class="sidebar-logo-sub">
+        <span class="sidebar-logo-dot"></span>NZ Sotheby's Int'l Realty
+      </div>
+    </div>
+    <div class="sidebar-nav">
+      <a href="#top" class="active">Home</a>
+      <a href="#story">My Story</a>
+      <a href="#approach">Approach</a>
+      <a href="#properties">Properties</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="sidebar-contact">
+      <div class="sidebar-contact-label">Quick Contact</div>
+      <div class="sidebar-contact-item">
+        <span class="sc-dot"></span>
+        <a href="tel:+64274363531">+64 27 436 3531</a>
+      </div>
+      <div class="sidebar-contact-item">
+        <span class="sc-dot"></span>
+        <a href="tel:+6474640184">+64 7 464 0184</a>
+      </div>
+      <div class="sidebar-contact-item">
+        <span class="sc-dot"></span>
+        <a href="mailto:lorenzo.scartozzi@sothebysrealty.com">Send Email</a>
+      </div>
+    </div>
+    <a href="#contact" class="sidebar-cta">Get In Touch</a>
+  </nav>
+
+  <!-- ─── MAIN CONTENT ─── -->
+  <main class="main-content" id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text-panel">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">NZ Sotheby's International Realty</span>
+        </div>
+        <div class="hero-name-stack">
+          <span class="hero-first">Lorenzo</span>
+          <span class="hero-last">Scartozzi</span>
+        </div>
+        <div class="hero-title-bar">
+          <span class="hero-title-text">Real Estate Professional</span>
+          <span class="hero-title-rule"></span>
+          <span class="hero-title-text">Waikato, New Zealand</span>
+        </div>
+        <p class="hero-bio">
+          Bringing Italian passion and charisma to the Waikato property market — with an unmatched understanding of the local landscape and an unwavering commitment to exceptional results.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-terra">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Connect Now
+          </a>
+          <a href="#properties" class="btn-ghost-dark">View Listings</a>
+        </div>
+      </div>
+      <div class="hero-photo-panel">
+        <img src="https://img-v2.gtsstatic.net/reno/imagereader.aspx?url=https%3A%2F%2Fcf-media.cfs.realogyprod.com%2Foriginal-images%2Frepbc%2Fperson%2F79d517d8-1f3f-4c55-9631-9864b2366ac8_-_downloaded.jpeg&w=640&q=75&option=N&permitphotoenlargement=false&fallbackimageurl=https%3A%2F%2Fwww.sothebysrealty.com%2Fassets%2Fimages%2Fcommon%2Fnophoto%2Fagent.jpg" alt="Lorenzo Scartozzi">
+        <div class="hero-photo-caption">
+          <div class="hero-photo-caption-inner">
+            <span class="hero-caption-tag">Based in</span>
+            <span class="hero-caption-location">Waikato, New Zealand</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAT BAR -->
+    <div class="stat-bar">
+      <div class="stat-item">
+        <div class="stat-value">1,100</div>
+        <div class="stat-label">Offices Worldwide</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">86</div>
+        <div class="stat-label">Countries & Territories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">26K+</div>
+        <div class="stat-label">Sales Associates</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">EN / IT</div>
+        <div class="stat-label">Languages Spoken</div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="story">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-mark"></span>
+            <span class="section-eyebrow-text">My Story</span>
+          </div>
+          <h2 class="about-heading">Local Expertise.<br><em>Global Connections.</em></h2>
+          <p class="about-body">Lorenzo Scartozzi is a distinguished real estate professional renowned for infusing <strong>passion and charisma</strong> into every property transaction. With an innate ability to secure premium outcomes, Lorenzo is your key to unlocking exceptional results in the Waikato market.</p>
+          <p class="about-body">Originally from <strong>Italy</strong>, Lorenzo has seamlessly woven his life into the fabric of Waikato. His unique background in the <strong>equestrian industry</strong> — managing stallions across the region — enhances his understanding of the local landscape and adds an extra layer of expertise to his real estate ventures.</p>
+          <p class="about-body">Lorenzo's love for Waikato stems from its expansive green spaces, tranquil surroundings, and the warmth of its people. His meticulous attention to detail and strong management skills set him apart, ensuring success without compromise.</p>
+          <div class="about-sep"></div>
+          <div class="passion-label">Outside of real estate, Lorenzo is a man of many interests:</div>
+          <div class="passion-tags">
+            <span class="passion-tag"><span class="passion-tag-dot"></span>Football</span>
+            <span class="passion-tag"><span class="passion-tag-dot"></span>Snowboarding</span>
+            <span class="passion-tag"><span class="passion-tag-dot"></span>Fishing</span>
+            <span class="passion-tag"><span class="passion-tag-dot"></span>Finance &amp; Economics</span>
+          </div>
+        </div>
+        <div class="about-right reveal" style="transition-delay:0.12s;">
+          <div class="about-photo">
+            <img src="https://img-v2.gtsstatic.net/reno/imagereader.aspx?url=https%3A%2F%2Fcf-media.cfs.realogyprod.com%2Foriginal-images%2Frepbc%2Fperson%2F79d517d8-1f3f-4c55-9631-9864b2366ac8_-_downloaded.jpeg&w=640&q=75&option=N&permitphotoenlargement=false&fallbackimageurl=https%3A%2F%2Fwww.sothebysrealty.com%2Fassets%2Fimages%2Fcommon%2Fnophoto%2Fagent.jpg" alt="Lorenzo Scartozzi">
+          </div>
+          <div class="about-photo-bar"></div>
+          <div class="about-creds">
+            <div class="about-cred">
+              <div class="about-cred-val">1,100</div>
+              <div class="about-cred-lbl">Offices Worldwide</div>
+            </div>
+            <div class="about-cred">
+              <div class="about-cred-val">86</div>
+              <div class="about-cred-lbl">Countries</div>
+            </div>
+            <div class="about-cred">
+              <div class="about-cred-val">26K</div>
+              <div class="about-cred-lbl">Sales Associates</div>
+            </div>
+            <div class="about-cred">
+              <div class="about-cred-val">EN/IT</div>
+              <div class="about-cred-lbl">Languages</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="approach-section" id="approach">
+      <div class="approach-inner">
+        <div class="approach-header reveal">
+          <div>
+            <div class="section-eyebrow" style="margin-bottom:16px;">
+              <span class="section-eyebrow-mark"></span>
+              <span class="section-eyebrow-text">What I Offer</span>
+            </div>
+            <h2 class="approach-heading">A Distinct Approach<br>to Every <em>Transaction</em></h2>
+          </div>
+          <p class="approach-sub">Combining deep local knowledge with the global reach of Sotheby's International Realty — your property deserves both.</p>
+        </div>
+        <div class="approach-rows reveal" style="transition-delay:0.1s;">
+          <div class="approach-row">
+            <div class="approach-num">I</div>
+            <div class="approach-title">Local Market Mastery</div>
+            <div class="approach-desc">Years of lived experience across the Waikato region, from Hamilton's suburbs to expansive rural estates. Lorenzo knows this land because he calls it home.</div>
+          </div>
+          <div class="approach-row">
+            <div class="approach-num">II</div>
+            <div class="approach-title">Global Network Access</div>
+            <div class="approach-desc">As part of Sotheby's International Realty, your property is connected to over 26,000 sales associates across 86 countries and 1,100 offices worldwide.</div>
+          </div>
+          <div class="approach-row">
+            <div class="approach-num">III</div>
+            <div class="approach-title">Premium Outcomes</div>
+            <div class="approach-desc">Meticulous attention to detail, sharp pricing strategy, and skilled negotiation — Lorenzo's track record is built on delivering results that exceed expectations.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPERTIES -->
+    <section class="properties-section" id="properties">
+      <div class="properties-inner">
+        <div class="prop-header reveal">
+          <div>
+            <div class="section-eyebrow" style="margin-bottom:16px;">
+              <span class="section-eyebrow-mark"></span>
+              <span class="section-eyebrow-text">Current Listings</span>
+            </div>
+            <h2 class="prop-heading">Featured <em>Properties</em></h2>
+          </div>
+          <a href="#contact" class="enquire-link">Enquire About Listings</a>
+        </div>
+        <div class="prop-grid reveal" style="transition-delay:0.1s;">
+          <div class="prop-card">
+            <div class="prop-img">
+              <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="278 Stokes Road">
+              <div class="prop-status">For Sale</div>
+            </div>
+            <div class="prop-body">
+              <div class="prop-price-line">Price Upon Request</div>
+              <div class="prop-address-line">278 Stokes Road</div>
+              <div class="prop-location-line">Waikato, 3494 — New Zealand</div>
+              <div class="prop-feats">
+                <span class="prop-feat-item">4 Bedrooms</span>
+                <span class="prop-feat-item">2 Full Bathrooms</span>
+              </div>
+            </div>
+          </div>
+          <div class="prop-card" style="opacity:0.8;">
+            <div class="prop-img">
+              <img src="https://plus.unsplash.com/premium_photo-1687960116957-ab813e1e66e6?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Upcoming Listing">
+              <div class="prop-status coming">Coming Soon</div>
+            </div>
+            <div class="prop-body">
+              <div class="prop-price-line" style="color:var(--warm-grey);">Upcoming Listing</div>
+              <div class="prop-address-line">Waikato Region</div>
+              <div class="prop-location-line">Contact Lorenzo for early access</div>
+              <div class="prop-feats">
+                <span class="prop-feat-item">Enquire Directly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <div class="quote-left reveal">
+        <div class="quote-decoration">"</div>
+        <div>
+          <div class="quote-sig-name">Lorenzo Scartozzi</div>
+          <div class="quote-sig-role">Real Estate Professional · Waikato</div>
+        </div>
+      </div>
+      <div class="quote-right reveal" style="transition-delay:0.1s;">
+        <p class="quote-text">Connect with Lorenzo to infuse your next real estate journey with a touch of Italian flair — whether you are selling or buying, a seamless and successful experience awaits.</p>
+      </div>
+    </section>
+
+    <!-- NETWORK -->
+    <section class="network-section">
+      <div class="network-inner">
+        <div class="reveal">
+          <div class="section-eyebrow" style="margin-bottom:16px;">
+            <span class="section-eyebrow-mark"></span>
+            <span class="section-eyebrow-text">The Network</span>
+          </div>
+          <h2 class="network-left-heading">Sotheby's<br>International<br><em>Realty</em></h2>
+          <p class="network-body">Founded in 1976 and associated with Sotheby's auction house established in 1744. Your property, presented to the world's most prestigious clientele.</p>
+        </div>
+        <div class="network-stats reveal" style="transition-delay:0.1s;">
+          <div class="net-st">
+            <div class="net-val">1,100</div>
+            <div class="net-lbl">Offices Worldwide</div>
+          </div>
+          <div class="net-st">
+            <div class="net-val">86</div>
+            <div class="net-lbl">Countries</div>
+          </div>
+          <div class="net-st">
+            <div class="net-val">26K+</div>
+            <div class="net-lbl">Associates</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <div class="section-eyebrow" style="margin-bottom:16px;">
+            <span class="section-eyebrow-mark"></span>
+            <span class="section-eyebrow-text">Get In Touch</span>
+          </div>
+          <h2 class="contact-heading">Let's Talk<br><em>Real Estate</em></h2>
+          <p class="contact-subtext">Ready to buy, sell, or just explore your options in the Waikato? Lorenzo is here to guide you every step of the way.</p>
+          <div class="contact-detail-block">
+            <div class="c-det-row">
+              <div class="c-det-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="c-det-lbl">Mobile</div>
+                <div class="c-det-val"><a href="tel:+64274363531">+64 27 436 3531</a></div>
+              </div>
+            </div>
+            <div class="c-det-row">
+              <div class="c-det-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="c-det-lbl">Office</div>
+                <div class="c-det-val"><a href="tel:+6474640184">+64 7 464 0184</a></div>
+              </div>
+            </div>
+            <div class="c-det-row">
+              <div class="c-det-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="c-det-lbl">Email</div>
+                <div class="c-det-val"><a href="mailto:lorenzo.scartozzi@sothebysrealty.com">lorenzo.scartozzi@sothebysrealty.com</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="office-blocks">
+            <div class="office-block">
+              <div class="office-terra-bar"></div>
+              <div>
+                <div class="office-block-name">Tamahere Village</div>
+                <div class="office-block-addr">65 Devine Road, Tamahere Village<br>Hamilton, Waikato 3283</div>
+              </div>
+            </div>
+            <div class="office-block">
+              <div class="office-terra-bar"></div>
+              <div>
+                <div class="office-block-name">Cambridge</div>
+                <div class="office-block-addr">79 Victoria Street<br>Cambridge, Waikato 3434</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal" style="transition-delay:0.12s;">
+          <p class="form-heading">Send a message</p>
+          <div class="form-row-2">
+            <div class="fld">
+              <label class="fld-lbl">First Name</label>
+              <input type="text" class="fld-inp" placeholder="Your first name">
+            </div>
+            <div class="fld">
+              <label class="fld-lbl">Last Name</label>
+              <input type="text" class="fld-inp" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="fld">
+            <label class="fld-lbl">Email Address</label>
+            <input type="email" class="fld-inp" placeholder="you@email.com">
+          </div>
+          <div class="fld">
+            <label class="fld-lbl">Phone (optional)</label>
+            <input type="tel" class="fld-inp" placeholder="+64 ...">
+          </div>
+          <div class="fld">
+            <label class="fld-lbl">How can I help?</label>
+            <textarea class="fld-ta" rows="5" placeholder="I'd like to discuss buying / selling / renting in the Waikato..."></textarea>
+          </div>
+          <button class="form-btn" id="formBtn">Send Message</button>
+          <p class="form-note">By submitting, you agree to be contacted by Lorenzo Scartozzi, NZ Sotheby's International Realty. Your information is handled in accordance with their Privacy Policy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-name">Lorenzo Scartozzi</div>
+      <div class="footer-center">New Zealand Sotheby's International Realty &nbsp;·&nbsp; Waikato</div>
+      <div class="footer-right">© 2026 Sotheby's International Realty</div>
+    </footer>
+
+  </main>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/64274363531" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M19.11 17.23c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.34.22-.63.08-.29-.14-1.2-.44-2.29-1.39-.84-.75-1.41-1.68-1.57-1.97-.17-.29-.02-.44.12-.58.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.43.9 1.43 1.29 2.81 2.78 4.08 1.49 1.27 2.23 1.69 3.31 2.01 1.08.32 2.06.27 2.84.16.47-.07 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33zM16.03 3C8.84 3 3 8.74 3 15.82c0 2.49.73 4.82 2 6.79L3 29l6.6-1.92c1.88 1.02 4.03 1.61 6.43 1.61 7.19 0 13.03-5.74 13.03-12.82C29.06 8.74 23.22 3 16.03 3zm0 23.38c-2.08 0-4.01-.56-5.68-1.53l-.41-.24-3.92 1.14 1.18-3.8-.27-.39a10.4 10.4 0 0 1-1.67-5.74c0-5.78 4.8-10.48 10.77-10.48 5.94 0 10.77 4.7 10.77 10.48 0 5.78-4.83 10.56-10.77 10.56z"/></svg>
+</a>
+
+<script>
+  // Mobile drawer
+  const drawer = document.getElementById('mobileDrawer');
+  document.getElementById('mobileHamburger').addEventListener('click', () => drawer.classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () => drawer.classList.remove('open'));
+  function closeMobileDrawer() { drawer.classList.remove('open'); }
+
+  // Sidebar active links on scroll
+  const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+  const sectionIds = ['top','story','approach','properties','contact'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  window.addEventListener('scroll', () => {
+    let current = 'top';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
+    });
+    sidebarLinks.forEach(a => {
+      const href = a.getAttribute('href').replace('#','');
+      a.classList.toggle('active', href === current);
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('shown'); });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => ro.observe(el));
+
+  // Form button
+  document.getElementById('formBtn').addEventListener('click', function() {
+    this.textContent = 'Message Sent ✓';
+    this.style.background = 'var(--sage)';
+    setTimeout(() => {
+      this.textContent = 'Send Message';
+      this.style.background = '';
+    }, 3500);
+  });
+</script>
+</body>
+</html>
